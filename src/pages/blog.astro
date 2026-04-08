@@ -7,7 +7,7 @@ import BlogCard from "../components/BlogCard.astro";
 
 const allPosts = Object.values(
   import.meta.glob("./blog/*.md", { eager: true }),
-);
+) as any[];
 
 // sort by frontmatter.date (newest first). Handles missing/invalid dates.
 const posts = allPosts.slice().sort((a, b) => {
@@ -29,9 +29,7 @@ const posts = allPosts.slice().sort((a, b) => {
     </div>
   </Banner>
 
-  <div
-    class="mx-auto my-4 px-4 py-4 md:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-6 justify-items-center items-stretch max-w-5xl"
-  >
+  <div class="mx-auto my-4 px-4 py-4 md:px-6 lg:px-8 max-w-5xl">
     {
       posts.map((post: any) => (
         <BlogCard url={post.url} frontmatter={post.frontmatter} />

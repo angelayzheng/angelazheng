@@ -4,93 +4,50 @@ import "../styles/global.css";
 const { url, frontmatter } = Astro.props;
 ---
 
-<button
-  onclick={`window.location.href='${url}'`}
-  class="w-full max-w-md py-3 md:py-4 px-4 md:px-8 border-2 border-lilac/50 rounded-lg hover:scale-102 hover:shadow-lg hover:shadow-salmon/20 dark:hover:shadow-rose/20 hover:cursor-pointer transition-transform duration-200 flex flex-col h-full"
+<article
+  class="mx-auto w-full max-w-4xl border-b border-lilac/35 py-4 md:py-5 first:border-t first:border-lilac/35"
 >
   <div
-    class="font-semibold text-eggplant dark:text-lilac text-lg md:text-xl my-1 md:my-2"
+    class="grid grid-cols-1 md:grid-cols-[9rem,1fr] md:gap-5 gap-2.5 items-start"
   >
-    {frontmatter.title}
-  </div>
-  <div class="text-sm md:text-base my-1 md:my-2 flex-grow">
-    {frontmatter.description}
-  </div>
+    <div
+      class="text-[0.7rem] md:text-xs uppercase tracking-[0.14em] text-teal dark:text-aquamarine md:pt-0.5"
+    >
+      {
+        new Date(frontmatter.date).toLocaleDateString("en-CA", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        })
+      }
+    </div>
 
-  <!-- Combined Tags and Tech Stack Section -->
-  <div class="mt-auto pt-3 md:pt-4">
-    <div class="tag-scroller overflow-hidden relative" data-speed="0.6">
-      <div
-        class="tag-track flex whitespace-nowrap gap-1.5 md:gap-2 will-change-transform"
+    <div class="flex flex-col gap-2 md:gap-2.5">
+      <h2
+        class="text-xl md:text-2xl leading-tight font-semibold text-eggplant dark:text-lilac"
       >
-        {
-          frontmatter.tags &&
-            frontmatter.tags.map((tag) => (
-              <span class="bg-eggplant/50 text-white rounded-md px-2 md:px-3 py-0.5 md:py-1 text-xs md:text-sm whitespace-nowrap">
+        <a href={url} class="hover:underline decoration-2 underline-offset-4">
+          {frontmatter.title}
+        </a>
+      </h2>
+
+      <p
+        class="text-sm md:text-base leading-relaxed text-dark/80 dark:text-light/80"
+      >
+        {frontmatter.description}
+      </p>
+
+      {
+        frontmatter.tags && frontmatter.tags.length > 0 && (
+          <div class="flex flex-wrap gap-1.5 pt-0.5">
+            {frontmatter.tags.map((tag: string) => (
+              <span class="rounded-full border border-rose/25 dark:border-salmon/35 px-2 py-0.5 text-[0.7rem] text-rose dark:text-salmon">
                 {tag}
               </span>
-            ))
-        }
-        {
-          frontmatter.techStack &&
-            frontmatter.techStack.map((tech) => (
-              <span class="bg-teal/50 text-white rounded-md px-2 md:px-3 py-0.5 md:py-1 text-xs md:text-sm whitespace-nowrap">
-                {tech}
-              </span>
-            ))
-        }
-      </div>
+            ))}
+          </div>
+        )
+      }
     </div>
   </div>
-</button>
-
-<style>
-  /* keep visible area clean */
-  .tag-scroller {
-    -webkit-overflow-scrolling: touch;
-  }
-  .tag-track {
-    transform: translateX(0);
-  }
-</style>
-
-<script is:inline>
-  // Auto-scroll tags only when they overflow the container.
-  // Uses requestAnimationFrame for smooth scrolling and clones content to avoid gaps.
-  (function () {
-    const scrollers = document.querySelectorAll(".tag-scroller");
-    scrollers.forEach((scroller) => {
-      const track = scroller.querySelector(".tag-track");
-      if (!track) return;
-
-      // If content does NOT overflow, center the tags and do nothing else.
-      if (track.scrollWidth <= scroller.clientWidth) {
-        track.style.justifyContent = "center";
-        return;
-      }
-
-      // Duplicate content to create a seamless loop.
-      track.innerHTML = track.innerHTML + track.innerHTML;
-
-      const speed = parseFloat(scroller.dataset.speed) || 0.6; // pixels per frame
-      let pos = 0;
-      const singleWidth = track.scrollWidth / 2;
-
-      let paused = false;
-      scroller.addEventListener("mouseenter", () => (paused = true));
-      scroller.addEventListener("mouseleave", () => (paused = false));
-
-      function step() {
-        if (!paused) {
-          pos += speed;
-          if (pos >= singleWidth) pos = 0;
-          track.style.transform = `translateX(-${pos}px)`;
-        }
-        requestAnimationFrame(step);
-      }
-
-      // Start animation
-      requestAnimationFrame(step);
-    });
-  })();
-</script>
+</article>
