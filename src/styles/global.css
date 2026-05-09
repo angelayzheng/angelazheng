@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght,MONO@0,300..800,1;1,300..800,1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
@@ -14,6 +14,21 @@
   --color-light: #F9F1F8;
 
   --font-display: "Inter", "Nunito Sans", sans-serif;
+  --font-mono: "Google Sans Code", monospace;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+.prose pre {
+  background-color: var(--color-dark) !important;
+  color: var(--color-light) !important;
+}
+
+.dark .prose pre {
+  background-color: var(--color-light) !important;
+  color: var(--color-dark) !important;
+}
+
+.prose :not(pre)>code {
+  background-color: transparent !important;
+}
