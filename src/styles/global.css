@@ -20,15 +20,13 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 .prose pre {
-  background-color: var(--color-dark) !important;
+  background: radial-gradient(circle at top left,
+      rgba(166, 108, 150, 0.25),
+      /* rose */
+      rgba(90, 44, 112, 0.3),
+      /* eggplant */
+      rgba(80, 130, 143, 0.23)
+      /* teal */
+    ), var(--color-dark) !important;
   color: var(--color-light) !important;
-}
-
-.dark .prose pre {
-  background-color: var(--color-light) !important;
-  color: var(--color-dark) !important;
-}
-
-.prose :not(pre)>code {
-  background-color: transparent !important;
 }

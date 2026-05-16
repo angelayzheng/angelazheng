@@ -41,7 +41,7 @@ I also then realized that my algorithm embarrassingly managed to take up more di
 
 # results
 
-FWSNBN conducted some test runs using all 3 of our algorithms (shoutout to *The Great Gatsby* and *Alice in Wonderland*; *Pride & Prejudice*, one of my favourite novels, was an addendum), and mine (with optimizations) turned out to be fastest. :D Although as you can see, mine was definitely not the most optimized in terms of space (you know what they say about [having a constant speed through spacetime](https://backreaction.blogspot.com/2020/08/do-we-really-travel-through-time-with.html)). Here's the data that I stole:
+FWSNBN conducted some test runs using all 3 of our algorithms (shoutout to *The Great Gatsby*, *Alice in Wonderland*, and *Dune*; *Pride & Prejudice*, one of my favourite novels, was an addendum), and mine (with optimizations) turned out to be fastest. :D Although as you can see, mine was definitely not the most optimized in terms of space (you know what they say about [having a constant speed through spacetime](https://backreaction.blogspot.com/2020/08/do-we-really-travel-through-time-with.html)). Here's the data that I stole:
 
 ```
 Huffman Benchmarks (time is in ns)
