@@ -18,5 +18,8 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.19",
     "sharp": "^0.34.4"
+  },
+  "overrides": {
+    "vite": "^7"
   }
 }
