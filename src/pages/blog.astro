@@ -6,7 +6,7 @@ import Banner from "../components/Banner.astro";
 import BlogCard from "../components/BlogCard.astro";
 
 const allPosts = Object.values(
-  import.meta.glob("./blog/*.md", { eager: true }),
+  import.meta.glob("./blog/*.{md,mdx}", { eager: true }),
 ) as any[];
 
 // sort by frontmatter.date (newest first). Handles missing/invalid dates.

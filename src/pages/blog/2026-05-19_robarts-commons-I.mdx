@@ -1,0 +1,64 @@
+---
+layout: ../../layouts/BlogLayout.astro
+title: Robarts Commons Study Rooms, Edition I
+date: 2026-05-19T00:04:00.000-04:00
+description: studying at Robarts Commons, one room at a time
+tags: ["library", "Robarts", "UofT"]
+---
+
+import { Image } from "astro:assets";
+import statusDistribution from "../../images/blog/2026-05-19_robarts-commons-I/00_status-distribution.png";
+import floorDistribution from "../../images/blog/2026-05-19_robarts-commons-I/01_floor-distribution.png";
+import letterDistribution from "../../images/blog/2026-05-19_robarts-commons-I/02_letter-distribution.png";
+import authorDistribution from "../../images/blog/2026-05-19_robarts-commons-I/03_author-distribution.png";
+import monthDistribution from "../../images/blog/2026-05-19_robarts-commons-I/04_month-distribution.png";
+import timelineDistribution from "../../images/blog/2026-05-19_robarts-commons-I/05_timeline.png";
+import gallery from "../../images/blog/2026-05-19_robarts-commons-I/gallery.png";
+
+ Towering concrete, a product of 60s brutalism, beak gazing over campus, containing thousands of students, hunkered down in [study mode](https://open.spotify.com/playlist/2oZmO2QqRk7qJptKix1n5o?si=c5d7593a32644d79). A glimmer of hope when a seat is empty -- even better when nearby chairs sit idly -- bathed in the noontime sunlight. *(You glance longingly outside -- how much studying do you need to do to truthfully be well-deserving of a break?)* A view across the street of (kinda mid) matcha, of western downtown Toronto, an occasional glance thrown out there while arms are raised in a stretch. Private rooms, arranged in a grid: in a row side by side, each floor stacked. Gatherings of students, some having stolen chairs, some with lights off, some having muffled debates, all unified by the LibCal booking system and the library Terms & Conditions.
+
+All that is to say: studying in Robarts Commons is a canon event for every single U of T(ears) student, me included.
+
+So, around November 2025, I came up with the goal of going to every single Robarts Commons study room and taking pictures of the library Terms & Conditions pages. Here's my progress report after first year!
+
+# analysis
+
+My lovely friends and I started a [Notion](https://www.notion.com/) database (one of my true loves), which I diligently updated with pictures each time we went to a new study room. Then after I decided to write this blog post, I thought I might as well take the opportunity to learn some statistical analysis in Python when I quite literally had a small, manageable dataset to work with. I exported the data from Notion and analyzed it using [`marimo`](https://marimo.io/) and [`seaborn`](https://seaborn.pydata.org/index.html). My code is [here](https://github.com/angelayzheng/robarts-commons).
+
+This school year, we managed to visit 15/32 study rooms. I didn't get a picture of all the rooms' Terms & Conditions because we visited some of them before I began this project.
+
+<Image src={statusDistribution} alt="Distribution of Visited Study Rooms by Status" class="mx-auto w-full max-w-xl rounded-lg" />
+
+We didn't purposefully book certain floors more or less, and a lot of the time, we didn't have much choice left by the time we were looking at LibCal. I guess this shows that other students seem to prefer booking the second floor?
+
+<Image src={floorDistribution} alt="Distribution of Visited Study Rooms by Floor" class="mx-auto w-full max-w-xl rounded-lg" />
+
+From our limited data so far, it seems like rooms with the same letter all have the same author. I am mildly disappointed, because that means we've already discovered all the authors, except for A. One room (3G) is marked as 'N/A' because there was no Terms & Conditions page when we went (and I remember going to 3G multiple times).
+
+<Image src={authorDistribution} alt="Distribution of Visited Study Rooms by Author" class="mx-auto w-full max-w-xl rounded-lg" />
+
+During first semester, we didn't really go to Robarts Commons often, since we could just go to random dorms' study rooms or study in library common areas. Then in second semester, due to [CSC111](https://artsci.calendar.utoronto.ca/course/csc111h1) Project 2 and my usual study group expanding, we started exploring all the bookable rooms across campus.
+
+We definitely spent the most time in Robarts rooms in April (exam season...), but by then we were usually going to repeats. Also, for some reason, other students often avoided booking a few rooms, because we kept seeing the same rooms being the only ones available.
+
+<Image src={monthDistribution} alt="Distribution of Visited Study Rooms by Month" class="mx-auto w-full max-w-xl rounded-lg" />
+
+Finally, here's a timeline of our visited study rooms. At the start of February, the [line was too steep](https://stackoverflow.com/questions/62897548/why-am-i-getting-a-line-shadow-in-a-seaborn-line-plot) for `seaborn`, causing it to display an aggregation, which is why it looks a little off.
+
+<Image src={timelineDistribution} alt="Timeline of Visited Study Rooms" class="mx-auto w-full max-w-xl rounded-lg" />
+
+# gallery
+
+This makes me very happy to look at. :D
+
+<Image src={gallery} alt="Gallery of Terms & Conditions" class="mx-auto w-full rounded-lg" />
+
+# thoughts
+
+- I actually quite like Robarts Commons, and I think the outside area is much more pleasant than in the study rooms (but only when it's less than 15% full). I am biased because I spent a lot of exam season procrastinating in these rooms, so I don't feel that productive in them. However, these are pretty much the best study rooms (that are usually bookable) across campus.
+- When Commons gets full, Gerstein is the best place to be productive (the dungeon rooms got really hot in April though). Or, study rooms in dorms (shoutout to Woodsworth and Oak House -- spent many fun days with friends here).
+- Please please please can everyone leave the rooms clean... it's rough out here once we're a few weeks into exam season... :(
+
+# future
+
+Since I thought of this only in November-ish, I know I would definitely be able to visit all the rooms by the end of second year. However, that makes the data analysis more boring than if I purposely spread it out until fourth year. I therefore expect there to be Editions II, III, and IV of this blog post coming in the future -- after all, knowing you can manipulate your own data however you want, for absolutely trivial purposes, makes it all the more fun. Until next year!
