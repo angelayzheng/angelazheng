@@ -6,27 +6,27 @@ const { url, frontmatter } = Astro.props;
 
 <button
   onclick={`window.location.href='${url}'`}
-  class="w-full max-w-md p-3 md:p-4 border-2 border-lilac/50 rounded-lg hover:scale-102 hover:shadow-lg hover:shadow-salmon/20 dark:hover:shadow-rose/20 hover:cursor-pointer transition-transform duration-200 flex flex-col h-full"
+  class="border-lilac/50 hover:shadow-salmon/20 dark:hover:shadow-rose/20 flex h-full w-full max-w-md flex-col rounded-lg border-2 p-3 transition-transform duration-200 hover:scale-102 hover:cursor-pointer hover:shadow-lg md:p-4"
 >
   <div
-    class="font-semibold text-eggplant dark:text-lilac text-lg md:text-xl my-1 md:my-2"
+    class="text-eggplant dark:text-lilac my-1 text-lg font-semibold md:my-2 md:text-xl"
   >
     {frontmatter.title}
   </div>
-  <div class="text-sm md:text-base my-1 md:my-2 flex-grow">
+  <div class="my-1 grow text-sm md:my-2 md:text-base">
     {frontmatter.description}
   </div>
 
   <!-- Combined Tags and Tech Stack Section -->
   <div class="mt-auto pt-3 md:pt-4">
-    <div class="tag-scroller overflow-hidden relative" data-speed="0.6">
+    <div class="tag-scroller relative overflow-hidden" data-speed="0.6">
       <div
-        class="tag-track flex whitespace-nowrap gap-1.5 md:gap-2 will-change-transform"
+        class="tag-track flex gap-1.5 whitespace-nowrap will-change-transform md:gap-2"
       >
         {
           frontmatter.tags &&
             frontmatter.tags.map((tag) => (
-              <span class="bg-eggplant/50 text-white rounded-md px-2 md:px-3 py-0.5 md:py-1 text-xs md:text-sm whitespace-nowrap">
+              <span class="bg-eggplant/50 rounded-md px-2 py-0.5 text-xs whitespace-nowrap text-white md:px-3 md:py-1 md:text-sm">
                 {tag}
               </span>
             ))
@@ -34,7 +34,7 @@ const { url, frontmatter } = Astro.props;
         {
           frontmatter.techStack &&
             frontmatter.techStack.map((tech) => (
-              <span class="bg-teal/50 text-white rounded-md px-2 md:px-3 py-0.5 md:py-1 text-xs md:text-sm whitespace-nowrap">
+              <span class="bg-teal/50 rounded-md px-2 py-0.5 text-xs whitespace-nowrap text-white md:px-3 md:py-1 md:text-sm">
                 {tech}
               </span>
             ))

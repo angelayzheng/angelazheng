@@ -5,13 +5,13 @@ const { url, frontmatter } = Astro.props;
 ---
 
 <article
-  class="mx-auto w-full max-w-4xl border-b border-lilac/35 py-4 md:py-5 first:border-t first:border-lilac/35"
+  class="border-lilac/35 first:border-lilac/35 mx-auto w-full max-w-4xl border-b py-4 first:border-t md:py-5"
 >
   <div
-    class="grid grid-cols-1 md:grid-cols-[9rem,1fr] md:gap-5 gap-2.5 items-start"
+    class="grid grid-cols-1 items-start gap-2.5 md:grid-cols-[9rem,1fr] md:gap-5"
   >
     <div
-      class="text-[0.7rem] md:text-xs uppercase tracking-[0.14em] text-teal dark:text-aquamarine md:pt-0.5"
+      class="text-teal dark:text-aquamarine text-[0.7rem] tracking-[0.14em] uppercase md:pt-0.5 md:text-xs"
     >
       {
         new Date(frontmatter.date).toLocaleDateString("en-CA", {
@@ -24,15 +24,15 @@ const { url, frontmatter } = Astro.props;
 
     <div class="flex flex-col gap-2 md:gap-2.5">
       <h2
-        class="text-xl md:text-2xl leading-tight font-semibold text-eggplant dark:text-lilac"
+        class="text-eggplant dark:text-lilac text-xl leading-tight font-semibold md:text-2xl"
       >
-        <a href={url} class="hover:underline decoration-2 underline-offset-4">
+        <a href={url} class="decoration-2 underline-offset-4 hover:underline">
           {frontmatter.title}
         </a>
       </h2>
 
       <p
-        class="text-sm md:text-base leading-relaxed text-dark/80 dark:text-light/80"
+        class="text-dark/80 dark:text-light/80 text-sm leading-relaxed md:text-base"
       >
         {frontmatter.description}
       </p>
@@ -41,7 +41,7 @@ const { url, frontmatter } = Astro.props;
         frontmatter.tags && frontmatter.tags.length > 0 && (
           <div class="flex flex-wrap gap-1.5 pt-0.5">
             {frontmatter.tags.map((tag: string) => (
-              <span class="rounded-full border border-rose/25 dark:border-salmon/35 px-2 py-0.5 text-[0.7rem] text-rose dark:text-salmon">
+              <span class="border-rose/25 dark:border-salmon/35 text-rose dark:text-salmon rounded-full border px-2 py-0.5 text-[0.7rem]">
                 {tag}
               </span>
             ))}

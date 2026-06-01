@@ -20,16 +20,16 @@ const posts = allPosts.slice().sort((a, b) => {
 <Layout title="Blog">
   <Banner>
     <h1
-      class="text-4xl md:text-5xl font-medium text-center text-eggplant dark:text-lilac"
+      class="text-eggplant dark:text-lilac text-center text-4xl font-medium md:text-5xl"
     >
       Blog
     </h1>
-    <div class="text-xl text-center italic mt-6">
+    <div class="mt-6 text-center text-xl italic">
       thoughts of an overthinker <span class="not-italic">📚</span>
     </div>
   </Banner>
 
-  <div class="mx-auto my-4 px-4 py-4 md:px-6 lg:px-8 max-w-5xl">
+  <div class="mx-auto my-4 max-w-5xl px-4 py-4 md:px-6 lg:px-8">
     {
       posts.map((post: any) => (
         <BlogCard url={post.url} frontmatter={post.frontmatter} />

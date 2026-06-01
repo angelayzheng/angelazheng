@@ -8,16 +8,14 @@ const { frontmatter } = Astro.props;
 ---
 
 <Layout title={frontmatter.title}>
-  <div class="my-6 md:my-10 flex flex-col gap-6 md:gap-10">
+  <div class="my-6 flex flex-col gap-6 md:my-10 md:gap-10">
     <!-- outer container (page-wide centering) -->
-    <div class="max-w-5xl mx-auto px-4 w-full">
+    <div class="mx-auto w-full max-w-5xl px-4">
       <!-- back button container -->
-      <div class="max-w-4xl mx-auto w-full">
+      <div class="mx-auto w-full max-w-4xl">
         <button
           onclick="location.href='/projects'"
-          class="mb-4 md:mb-5 p-2 border-2 border-lilac/50 rounded-lg
-          hover:scale-102 hover:shadow-lg hover:shadow-salmon/20 dark:hover:shadow-rose/20 hover:cursor-pointer hover:text-eggplant dark:hover:text-lilac
-          transition-transform duration-200 text-sm md:text-base"
+          class="border-lilac/50 hover:shadow-salmon/20 dark:hover:shadow-rose/20 hover:text-eggplant dark:hover:text-lilac mb-4 rounded-lg border-2 p-2 text-sm transition-transform duration-200 hover:scale-102 hover:cursor-pointer hover:shadow-lg md:mb-5 md:text-base"
         >
           &larr; Back to Projects
         </button>
@@ -25,7 +23,7 @@ const { frontmatter } = Astro.props;
 
       <!-- metadata / title block -->
       <div
-        class="max-w-4xl mx-auto text-base md:text-lg grid gap-3 md:gap-4 justify-center justify-items-center"
+        class="mx-auto grid max-w-4xl justify-center justify-items-center gap-3 text-base md:gap-4 md:text-lg"
       >
         <div class="text-sm md:text-base">
           {
@@ -37,11 +35,11 @@ const { frontmatter } = Astro.props;
           }
         </div>
 
-        <div class="flex flex-wrap gap-1.5 md:gap-2 justify-center">
+        <div class="flex flex-wrap justify-center gap-1.5 md:gap-2">
           {
             frontmatter.tags &&
-              frontmatter.tags.map((tag) => (
-                <span class="bg-eggplant/50 text-white rounded-md px-2 md:px-3 py-0.5 md:py-1 text-xs md:text-sm">
+              frontmatter.tags.map((tag: string) => (
+                <span class="bg-eggplant/50 rounded-md px-2 py-0.5 text-xs text-white md:px-3 md:py-1 md:text-sm">
                   {tag}
                 </span>
               ))
@@ -49,16 +47,16 @@ const { frontmatter } = Astro.props;
         </div>
 
         <h1
-          class="text-center text-3xl md:text-5xl font-semibold my-2 md:my-3 px-4"
+          class="my-2 px-4 text-center text-3xl font-semibold md:my-3 md:text-5xl"
         >
           {frontmatter.title}
         </h1>
 
-        <div class="flex flex-wrap gap-1.5 md:gap-2 justify-center">
+        <div class="flex flex-wrap justify-center gap-1.5 md:gap-2">
           {
             frontmatter.techStack &&
-              frontmatter.techStack.map((tech) => (
-                <span class="bg-teal/50 text-white rounded-md px-2 md:px-3 py-0.5 md:py-1 text-xs md:text-sm">
+              frontmatter.techStack.map((tech: string) => (
+                <span class="bg-teal/50 rounded-md px-2 py-0.5 text-xs text-white md:px-3 md:py-1 md:text-sm">
                   {tech}
                 </span>
               ))
@@ -66,7 +64,7 @@ const { frontmatter } = Astro.props;
         </div>
 
         <div
-          class="italic text-center text-sm md:text-base max-w-[80ch] mx-auto px-4"
+          class="mx-auto max-w-[80ch] px-4 text-center text-sm italic md:text-base"
         >
           {frontmatter.description}
         </div>

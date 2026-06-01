@@ -28,7 +28,7 @@ const gallery = galleryData
     const fileObj = fname ? byName.get(fname) : imageEntries[i]?.file;
     return fileObj ? { ...meta, filePath: fileObj } : null;
   })
-  .filter(Boolean);
+  .filter((item): item is NonNullable<typeof item> => item !== null);
 
 // Shuffle the array of images with metadata
 for (let i = gallery.length - 1; i > 0; i--) {
@@ -40,18 +40,18 @@ for (let i = gallery.length - 1; i > 0; i--) {
 <Layout title="Gallery">
   <Banner>
     <h1
-      class="text-4xl md:text-5xl font-medium text-center text-eggplant dark:text-lilac"
+      class="text-eggplant dark:text-lilac text-center text-4xl font-medium md:text-5xl"
     >
       Gallery
     </h1>
-    <div class="text-xl text-center italic mt-6">
+    <div class="mt-6 text-center text-xl italic">
       taking pictures <span class="not-italic">📸</span>
     </div>
   </Banner>
 
   <!-- Responsive masonry grid -->
   <div
-    class="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-2 space-y-2 p-2 md:p-4"
+    class="columns-1 gap-2 space-y-2 p-2 sm:columns-2 md:columns-3 md:p-4 lg:columns-4"
   >
     {
       gallery.map((image) => (
@@ -66,11 +66,11 @@ for (let i = gallery.length - 1; i > 0; i--) {
   </div>
 
   <!-- Quote section -->
-  <div class="mx-auto my-4 md:my-10 max-w-3xl grid grid-cols-1 gap-4 px-4">
+  <div class="mx-auto my-4 grid max-w-3xl grid-cols-1 gap-4 px-4 md:my-10">
     <div class="text-center text-base md:text-lg">
       Thanks for sticking around until the end! :D Here's a quote I really like:
       <div
-        class="p-3 md:p-4 rounded-lg mt-2 bg-linear-90 from-salmon/25 via-lilac/25 to-aquamarine/25 dark:from-rose/25 dark:via-eggplant/25 dark:to-teal/25"
+        class="from-salmon/25 via-lilac/25 to-aquamarine/25 dark:from-rose/25 dark:via-eggplant/25 dark:to-teal/25 mt-2 rounded-lg bg-linear-90 p-3 md:p-4"
       >
         <blockquote>
           <p class="mb-3 text-sm md:text-base">
@@ -87,7 +87,7 @@ for (let i = gallery.length - 1; i > 0; i--) {
           <a
             href="https://www.annliang.com/"
             target="_blank"
-            class="text-xs md:text-sm hover:text-eggplant dark:hover:text-lilac"
+            class="hover:text-eggplant dark:hover:text-lilac text-xs md:text-sm"
             >— Ann Liang, <span class="italic"
               >Never Thought I'd End Up Here</span
             >, pg. 284</a

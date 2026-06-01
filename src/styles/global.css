@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght,MONO@0,300..800,1;1,300..800,1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
-@import 'tailwindcss';
-@plugin '@tailwindcss/typography';
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght,MONO@0,300..800,1;1,300..800,1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
-  --color-aquamarine: #A3D2CA;
-  --color-teal: #50828F;
-  --color-lilac: #C4A5D3;
-  --color-eggplant: #5A2C70;
-  --color-rose: #A66C96;
-  --color-salmon: #DFB6B2;
+  --color-aquamarine: #a3d2ca;
+  --color-teal: #50828f;
+  --color-lilac: #c4a5d3;
+  --color-eggplant: #5a2c70;
+  --color-rose: #a66c96;
+  --color-salmon: #dfb6b2;
 
   --color-dark: #272527;
-  --color-light: #F9F1F8;
+  --color-light: #f9f1f8;
 
   --font-display: "Inter", "Nunito Sans", sans-serif;
   --font-mono: "Google Sans Code", monospace;
@@ -20,13 +20,13 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 .prose pre {
-  background: radial-gradient(circle at top left,
-      rgba(166, 108, 150, 0.25),
-      /* rose */
-      rgba(90, 44, 112, 0.3),
-      /* eggplant */
-      rgba(80, 130, 143, 0.23)
-      /* teal */
-    ), var(--color-dark) !important;
+  background:
+    radial-gradient(
+      circle at top left,
+      /* rose */ rgba(166, 108, 150, 0.25),
+      /* eggplant */ rgba(90, 44, 112, 0.3),
+      /* teal */ rgba(80, 130, 143, 0.23)
+    ),
+    var(--color-dark) !important;
   color: var(--color-light) !important;
 }

@@ -6,7 +6,7 @@ import SocialLinks from "./SocialLinks.astro";
 ---
 
 <nav
-  class="sticky top-0 z-50 px-4 md:px-5 py-3 md:py-4 bg-linear-90 from-aquamarine via-lilac to-salmon dark:from-teal dark:via-eggplant dark:to-rose"
+  class="from-aquamarine via-lilac to-salmon dark:from-teal dark:via-eggplant dark:to-rose sticky top-0 z-50 bg-linear-90 px-4 py-3 md:px-5 md:py-4"
 >
   <div class="flex items-center justify-between md:justify-start">
     <!-- Logo -->
@@ -17,14 +17,14 @@ import SocialLinks from "./SocialLinks.astro";
           alt="Angela Zheng"
           width={120}
           loading="eager"
-          class="block dark:hidden md:w-[150px]"
+          class="block md:w-37.5 dark:hidden"
         />
         <img
           src="/images/name-light.png"
           alt="Angela Zheng"
           width={120}
           loading="eager"
-          class="hidden dark:block md:w-[150px]"
+          class="hidden md:w-37.5 dark:block"
         />
       </a>
     </div>
@@ -32,7 +32,7 @@ import SocialLinks from "./SocialLinks.astro";
     <!-- Mobile Menu Button -->
     <button
       id="menu-toggle"
-      class="md:hidden p-2 text-eggplant dark:text-lilac"
+      class="text-eggplant dark:text-lilac p-2 md:hidden"
       aria-label="Toggle menu"
     >
       <svg
@@ -60,7 +60,7 @@ import SocialLinks from "./SocialLinks.astro";
     </div>
 
     <!-- Theme Switch and Social Links - Desktop -->
-    <div class="hidden md:flex md:ml-auto md:mr-6 md:items-center">
+    <div class="hidden md:mr-6 md:ml-auto md:flex md:items-center">
       <ThemeSwitch />
     </div>
     <div class="hidden md:block">
@@ -80,7 +80,7 @@ import SocialLinks from "./SocialLinks.astro";
       <NavLink title="research" link="/research/" />
       <NavLink title="blog" link="/blog/" />
       <NavLink title="gallery" link="/gallery/" />
-      <div class="flex items-center gap-4 mt-3">
+      <div class="mt-3 flex items-center gap-4">
         <ThemeSwitch />
         <SocialLinks />
       </div>

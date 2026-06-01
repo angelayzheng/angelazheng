@@ -5,8 +5,16 @@ import Layout from "../layouts/Layout.astro";
 import Banner from "../components/Banner.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 
+type ProjectPost = {
+  url: string;
+  frontmatter?: {
+    date?: string;
+    [key: string]: unknown;
+  };
+};
+
 const allPosts = Object.values(
-  import.meta.glob("./projects/*.md", { eager: true }),
+  import.meta.glob<ProjectPost>("./projects/*.md", { eager: true }),
 );
 
 // sort by frontmatter.date (newest first). Handles missing/invalid dates.
@@ -20,20 +28,20 @@ const posts = allPosts.slice().sort((a, b) => {
 <Layout title="Projects">
   <Banner>
     <h1
-      class="text-4xl md:text-5xl font-medium text-center text-eggplant dark:text-lilac"
+      class="text-eggplant dark:text-lilac text-center text-4xl font-medium md:text-5xl"
     >
       Projects
     </h1>
-    <div class="text-xl text-center italic mt-6">
+    <div class="mt-6 text-center text-xl italic">
       building things <span class="not-italic">🚀</span>
     </div>
   </Banner>
 
   <div
-    class="mx-auto my-4 px-4 py-4 md:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-6 justify-items-center items-stretch max-w-5xl"
+    class="mx-auto my-4 grid max-w-5xl grid-cols-1 items-stretch justify-items-center gap-6 px-4 py-4 md:px-6 lg:grid-cols-2 lg:px-8"
   >
     {
-      posts.map((post: any) => (
+      posts.map((post) => (
         <ProjectCard url={post.url} frontmatter={post.frontmatter} />
       ))
     }

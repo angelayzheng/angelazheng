@@ -4,7 +4,7 @@ import Social from "./Social.astro";
 const { deploy, repo } = Astro.props;
 ---
 
-<div class="flex gap-2 justify-center">
+<div class="flex justify-center gap-2">
   {deploy && <Social iconName="deploy" platform="Deploy" link={deploy} />}
   <Social iconName="github" platform="GitHub" link={repo} />
 </div>

@@ -19,17 +19,17 @@ function formatDate(dateStr?: string) {
 }
 ---
 
-<div class="relative group rounded-lg overflow-hidden break-inside-avoid">
+<div class="group relative break-inside-avoid overflow-hidden rounded-lg">
   <Image
     src={filePath}
     alt={description || "Gallery photo"}
     loading="lazy"
-    class="rounded-lg block w-full h-auto"
+    class="block h-auto w-full rounded-lg"
   />
   <div
-    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-center items-center text-white p-4 text-center"
+    class="absolute inset-0 flex flex-col items-center justify-center bg-black/60 p-4 text-center text-white opacity-0 transition-opacity group-hover:opacity-100"
   >
-    {location && <div class="mb-1 text-md italic">{location}</div>}
+    {location && <div class="text-md mb-1 italic">{location}</div>}
     {date && <div class="text-xs">{formatDate(date)}</div>}
   </div>
 </div>

@@ -7,13 +7,15 @@ const isActive = Astro.url.pathname === link;
 
 <a
   href={link}
-  class:list={[
-    "text-lg transition-all duration-200 hover:cursor-pointer",
-    "hover:-translate-y-1 hover:text-eggplant dark:hover:text-lilac",
-    isActive
-      ? "text-eggplant dark:text-lilac underline decoration-2 underline-offset-4"
-      : "text-dark dark:text-light",
-  ]}
+  class={`
+    text-lg transition-all duration-200 hover:cursor-pointer
+    hover:text-eggplant dark:hover:text-lilac hover:-translate-y-1
+    ${
+      isActive
+        ? "text-eggplant dark:text-lilac underline decoration-2 underline-offset-4"
+        : "text-dark dark:text-light"
+    }
+  `}
 >
   {title}
 </a>
