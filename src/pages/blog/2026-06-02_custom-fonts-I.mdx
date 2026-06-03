@@ -1,0 +1,69 @@
+---
+layout: ../../layouts/BlogLayout.astro
+title: I Tried Making My Own Fonts, Part I
+date: 2026-06-02T00:20:00.000-04:00
+description: ... and was only moderately successful
+tags: ["fonts", "graphic design"]
+---
+
+import { Image } from "astro:assets";
+import notebooks from "../../images/blog/2026-06-02_custom-fonts-I/notebooks.jpg";
+import september from "../../images/blog/2026-06-02_custom-fonts-I/september.jpg";
+
+I had a brief foray into something I've always been interested in: font-making. It proved to be a lot more difficult (and time-consuming) than I was expecting.
+
+Quick shoutout to [Linus Boman](https://www.youtube.com/linusboman) -- I've watched a lot of his videos critiquing fonts used in brand marketing.
+
+# handwriting
+
+Last autumn, I decided I wanted to make a font out of my usual handwriting. Newly equipped with an iPad for university, I spent a few hours quickly making a handwriting font using [Calligraphr](https://www.calligraphr.com/en/)'s base template and [GoodNotes](https://www.goodnotes.com/). The whole process was pretty simple -- I just downloaded the template from Calligraphr, wrote out all the characters, uploaded it, and downloaded the `.ttf` file (which I later converted to `.woff2` format for my website). It's called **Tapioca** because why not be whimsical when choosing the names of my own fonts?
+
+<div class="not-prose font-tapioca text-2xl">
+  Hello! This is my handwriting font called Tapioca. Hopefully it is rendering
+  correctly. Honestly, I'm pretty happy with the way this one turned out.
+  Ten-year-old me would have gone crazy with this font on my tri-fold posters
+  for school projects.
+</div>
+
+**Generic test:**
+
+<div class="not-prose font-tapioca text-2xl">
+  The quick brown fox jumps over the lazy dog.
+</div>
+
+# cursive
+
+I've been doing calligraphy for years (see examples below), so I thought this would be fun, and I could end up with a nice aesthetic calligraphy font to use. _Oh, how wrong I was._
+
+<Image
+  src={september}
+  alt="Calligraphy of 'September' in a notebook"
+  class="mx-auto w-full max-w-xl rounded-lg"
+/>
+<Image
+  src={notebooks}
+  alt="Notebooks with calligraphy titles"
+  class="mx-auto w-full max-w-xl rounded-lg"
+/>
+
+Getting letters to look consistent is extremely difficult, especially when I'm used to writing calligraphy as an entire line, not as individual letters (I mean, that's basically the [whole point of cursive](https://en.wikipedia.org/wiki/Cursive#Origin)). My letters have very inconsistent slope, height, and spacing... the font just does not look cohesive. :( I have noticed that generally, cursive fonts have more of a slant, so I'll probably try to implement that on my next cursive font iteration.
+
+I used Calligraphr again for the base template and spent an hour or so writing out the individual characters on my iPad. Then after downloading the `.ttf` file, I saw that the letter spacing wasn't reduced enough, so I used [Glyphr Studio](https://www.glyphrstudio.com/) to further reduce the letter spacing until they mostly connected.
+
+So... here's a preview of my cursive font, **Bellflower**:
+
+<div class="not-prose font-bellflower text-xl md:text-3xl">
+  This text should be rendered in my cursive font that I named Bellflower; I
+  have to say, it is almost comical how unreadable and inconsistent this is. I
+  promise my real calligraphy is a lot better-looking.
+</div>
+
+**Generic test:**
+
+<div class="not-prose font-bellflower text-xl md:text-2xl">
+  The quick brown fox jumps over the lazy dog.
+</div>
+
+# what's next...!
+
+I have big plans for improvements, since I find font (and graphic) design really interesting. And I do plan on making my fonts look better, whenever I end up having the free time and motivation to get back to this. Stay tuned for Part 2. :)

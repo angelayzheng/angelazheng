@@ -8,70 +8,71 @@ const { frontmatter } = Astro.props;
 ---
 
 <Layout title={frontmatter.title}>
-  <div class="my-6 flex flex-col gap-6 md:my-10 md:gap-10">
-    <!-- outer container (page-wide centering) -->
-    <div class="mx-auto w-full max-w-5xl px-4">
-      <!-- back button container -->
-      <div class="mx-auto w-full max-w-4xl">
-        <button
-          onclick="location.href='/projects'"
-          class="border-lilac/50 hover:shadow-salmon/20 dark:hover:shadow-rose/20 hover:text-eggplant dark:hover:text-lilac mb-4 rounded-lg border-2 p-2 text-sm transition-transform duration-200 hover:scale-102 hover:cursor-pointer hover:shadow-lg md:mb-5 md:text-base"
+  <!-- outer container (page-wide centering) -->
+  <div
+    class="mx-auto my-6 flex w-full max-w-5xl flex-col gap-6 px-4 md:my-10 md:gap-10"
+  >
+    <div class="w-full max-w-[65ch] px-4 text-left">
+      <a
+        href="/projects"
+        class="text-rose dark:text-salmon inline-flex items-center gap-1 text-sm md:text-base"
+      >
+        <span aria-hidden="true">&#8689;</span><span class="hover:underline">
+          Back to Projects</span
         >
-          &larr; Back to Projects
-        </button>
+      </a>
+    </div>
+
+    <!-- metadata / title block -->
+    <div
+      class="mx-auto grid max-w-4xl justify-center justify-items-center gap-3 text-base md:gap-4 md:text-lg"
+    >
+      <div class="text-sm md:text-base">
+        {
+          new Date(frontmatter.date).toLocaleDateString("en-CA", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })
+        }
       </div>
 
-      <!-- metadata / title block -->
-      <div
-        class="mx-auto grid max-w-4xl justify-center justify-items-center gap-3 text-base md:gap-4 md:text-lg"
+      <div class="flex flex-wrap justify-center gap-1.5 md:gap-2">
+        {
+          frontmatter.tags &&
+            frontmatter.tags.map((tag: string) => (
+              <span class="bg-eggplant/50 rounded-md px-2 py-0.5 text-xs text-white md:px-3 md:py-1 md:text-sm">
+                {tag}
+              </span>
+            ))
+        }
+      </div>
+
+      <h1
+        class="my-2 px-4 text-center text-3xl font-semibold md:my-3 md:text-5xl"
       >
-        <div class="text-sm md:text-base">
-          {
-            new Date(frontmatter.date).toLocaleDateString("en-CA", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })
-          }
-        </div>
+        {frontmatter.title}
+      </h1>
 
-        <div class="flex flex-wrap justify-center gap-1.5 md:gap-2">
-          {
-            frontmatter.tags &&
-              frontmatter.tags.map((tag: string) => (
-                <span class="bg-eggplant/50 rounded-md px-2 py-0.5 text-xs text-white md:px-3 md:py-1 md:text-sm">
-                  {tag}
-                </span>
-              ))
-          }
-        </div>
+      <div class="flex flex-wrap justify-center gap-1.5 md:gap-2">
+        {
+          frontmatter.techStack &&
+            frontmatter.techStack.map((tech: string) => (
+              <span class="bg-teal/50 rounded-md px-2 py-0.5 text-xs text-white md:px-3 md:py-1 md:text-sm">
+                {tech}
+              </span>
+            ))
+        }
+      </div>
 
-        <h1
-          class="my-2 px-4 text-center text-3xl font-semibold md:my-3 md:text-5xl"
-        >
-          {frontmatter.title}
-        </h1>
+      <div
+        class="mx-auto max-w-[80ch] px-4 text-center text-sm italic md:text-base"
+      >
+        {frontmatter.description}
+      </div>
 
-        <div class="flex flex-wrap justify-center gap-1.5 md:gap-2">
-          {
-            frontmatter.techStack &&
-              frontmatter.techStack.map((tech: string) => (
-                <span class="bg-teal/50 rounded-md px-2 py-0.5 text-xs text-white md:px-3 md:py-1 md:text-sm">
-                  {tech}
-                </span>
-              ))
-          }
-        </div>
-
-        <div
-          class="mx-auto max-w-[80ch] px-4 text-center text-sm italic md:text-base"
-        >
-          {frontmatter.description}
-        </div>
-
-        <div class="mt-2 md:mt-4">
-          <ProjectLinks deploy={frontmatter.demo} repo={frontmatter.repo} />
-        </div>
+      <div class="mt-2 md:mt-4">
+        <ProjectLinks deploy={frontmatter.demo} repo={frontmatter.repo} />
       </div>
     </div>
 
