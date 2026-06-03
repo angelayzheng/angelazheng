@@ -24,5 +24,8 @@
   },
   "overrides": {
     "vite": "^7"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-win32-x64-msvc": "^4.61.0"
   }
 }
