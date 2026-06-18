@@ -4,18 +4,17 @@ import { Image } from "astro:assets";
 
 const { filePath, description, location, date } = Astro.props;
 
-const DATE_FMT = new Intl.DateTimeFormat("en-CA", {
+const MONTH_YEAR_FMT = new Intl.DateTimeFormat("en-CA", {
   year: "numeric",
   month: "long",
-  day: "numeric",
 });
 
 function formatDate(dateStr?: string) {
   if (!dateStr) return "";
   if (/^\d{4}$/.test(dateStr)) return dateStr;
-  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dateStr);
-  const d = m ? new Date(+m[1], +m[2] - 1, +m[3]) : new Date(dateStr);
-  return Number.isNaN(d.getTime()) ? dateStr : DATE_FMT.format(d);
+  const m = /^(\d{4})-(\d{2})(?:-(\d{2}))?$/.exec(dateStr);
+  const d = m ? new Date(+m[1], +m[2] - 1, 1) : new Date(dateStr);
+  return Number.isNaN(d.getTime()) ? dateStr : MONTH_YEAR_FMT.format(d);
 }
 ---
 

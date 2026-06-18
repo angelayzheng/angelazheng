@@ -41,9 +41,8 @@ const linkEntries = (() => {
         {linkEntries.map(([text, url], index) => (
           <span>
             {index > 0 && " | "}
-            <a href={url} target="_blank" rel="noopener noreferrer">
-              {text}
-            </a>
+            <!-- prettier-ignore -->
+            <a href={url} target="_blank">{text}</a>
           </span>
         ))}
       </p>
