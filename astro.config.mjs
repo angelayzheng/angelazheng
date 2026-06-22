@@ -1,16 +1,17 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
-import icon from 'astro-icon';
-import mdx from '@astrojs/mdx';
-import tailwindcss from '@tailwindcss/vite';
+import { defineConfig } from "astro/config";
+import { unified } from "@astrojs/markdown-remark";
+import icon from "astro-icon";
+import mdx from "@astrojs/mdx";
+import tailwindcss from "@tailwindcss/vite";
 
 function openMarkdownLinksInNewTab() {
   return (tree) => {
     const visit = (node) => {
-      if (node && node.type === 'element' && node.tagName === 'a') {
+      if (node && node.type === "element" && node.tagName === "a") {
         node.properties = node.properties || {};
-        node.properties.target = '_blank';
-        node.properties.rel = 'noopener noreferrer';
+        node.properties.target = "_blank";
+        node.properties.rel = "noopener noreferrer";
       }
 
       if (node && Array.isArray(node.children)) {
@@ -25,22 +26,24 @@ function openMarkdownLinksInNewTab() {
 // https://astro.build/config
 export default defineConfig({
   image: {
-    service: { entrypoint: 'astro/assets/services/sharp' }
+    service: { entrypoint: "astro/assets/services/sharp" },
   },
 
   markdown: {
-    rehypePlugins: [openMarkdownLinksInNewTab]
+    processor: unified({
+      rehypePlugins: [openMarkdownLinksInNewTab],
+    }),
   },
 
   integrations: [icon(), mdx()],
 
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
   },
 
   redirects: {
-    "/publications": "/research"
+    "/publications": "/research",
   },
 
-  site: 'https://angelazheng.ca'
+  site: "https://angelazheng.ca",
 });
