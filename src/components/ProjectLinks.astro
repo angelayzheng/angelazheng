@@ -1,10 +1,30 @@
 ---
-import Social from "./Social.astro";
+import { Icon } from "astro-icon/components";
 
 const { deploy, repo } = Astro.props;
 ---
 
-<div class="flex justify-center gap-2">
-  {deploy && <Social iconName="deploy" platform="Deploy" link={deploy} />}
-  <Social iconName="github" platform="GitHub" link={repo} />
+<div class="flex flex-row items-center justify-center gap-2">
+  {
+    deploy && (
+      <a
+        href={deploy}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-teal inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm text-white hover:underline"
+      >
+        <Icon name="deploy" class="h-5 w-5" />
+        <span>Demo</span>
+      </a>
+    )
+  }
+  <a
+    href={repo}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="bg-teal inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm text-white hover:underline"
+  >
+    <Icon name="github" class="h-5 w-5" />
+    <span>GitHub</span>
+  </a>
 </div>

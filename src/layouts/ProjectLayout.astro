@@ -37,6 +37,18 @@ const { frontmatter } = Astro.props;
         }
       </div>
 
+      <h1
+        class="my-2 px-4 text-center text-3xl font-semibold md:my-3 md:text-5xl"
+      >
+        {frontmatter.title}
+      </h1>
+
+      <div
+        class="mx-auto max-w-[80ch] px-4 text-center text-sm italic md:text-base"
+      >
+        {frontmatter.description}
+      </div>
+
       <div class="flex flex-wrap justify-center gap-1.5 md:gap-2">
         {
           frontmatter.tags &&
@@ -46,15 +58,7 @@ const { frontmatter } = Astro.props;
               </span>
             ))
         }
-      </div>
 
-      <h1
-        class="my-2 px-4 text-center text-3xl font-semibold md:my-3 md:text-5xl"
-      >
-        {frontmatter.title}
-      </h1>
-
-      <div class="flex flex-wrap justify-center gap-1.5 md:gap-2">
         {
           frontmatter.techStack &&
             frontmatter.techStack.map((tech: string) => (
@@ -63,12 +67,6 @@ const { frontmatter } = Astro.props;
               </span>
             ))
         }
-      </div>
-
-      <div
-        class="mx-auto max-w-[80ch] px-4 text-center text-sm italic md:text-base"
-      >
-        {frontmatter.description}
       </div>
 
       <div class="mt-2 md:mt-4">

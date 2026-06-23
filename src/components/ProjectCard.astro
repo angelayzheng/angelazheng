@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import ProjectLinks from "./ProjectLinks.astro";
 
 const { url, frontmatter } = Astro.props;
 ---
@@ -13,8 +14,11 @@ const { url, frontmatter } = Astro.props;
   >
     {frontmatter.title}
   </div>
-  <div class="my-1 grow text-sm md:my-2 md:text-base">
+  <div class="my-1 text-sm md:my-2 md:text-base">
     {frontmatter.description}
+  </div>
+  <div class="my-2 grow">
+    <ProjectLinks deploy={frontmatter.demo} repo={frontmatter.repo} />
   </div>
 
   <!-- Combined Tags and Tech Stack Section -->
@@ -26,7 +30,7 @@ const { url, frontmatter } = Astro.props;
         {
           frontmatter.tags &&
             frontmatter.tags.map((tag) => (
-              <span class="bg-eggplant/50 rounded-md px-2 py-0.5 text-xs whitespace-nowrap text-white md:px-3 md:py-1 md:text-sm">
+              <span class="bg-eggplant/50 rounded-md px-2 py-0.5 text-xs whitespace-nowrap text-white md:px-2 md:py-1 md:text-sm">
                 {tag}
               </span>
             ))
@@ -34,7 +38,7 @@ const { url, frontmatter } = Astro.props;
         {
           frontmatter.techStack &&
             frontmatter.techStack.map((tech) => (
-              <span class="bg-teal/50 rounded-md px-2 py-0.5 text-xs whitespace-nowrap text-white md:px-3 md:py-1 md:text-sm">
+              <span class="bg-teal/50 rounded-md px-2 py-0.5 text-xs whitespace-nowrap text-white md:px-2 md:py-1 md:text-sm">
                 {tech}
               </span>
             ))

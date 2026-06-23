@@ -14,7 +14,7 @@ type ProjectPost = {
 };
 
 const allPosts = Object.values(
-  import.meta.glob<ProjectPost>("./projects/*.md", { eager: true }),
+  import.meta.glob<ProjectPost>("./projects/*.{md,mdx}", { eager: true }),
 );
 
 // sort by frontmatter.date (newest first). Handles missing/invalid dates.
