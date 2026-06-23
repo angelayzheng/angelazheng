@@ -1,13 +1,13 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig, passthroughImageService } from "astro/config";
 import { unified } from "@astrojs/markdown-remark";
 import icon from "astro-icon";
 import mdx from "@astrojs/mdx";
 import tailwindcss from "@tailwindcss/vite";
 
 function openMarkdownLinksInNewTab() {
-  return (tree) => {
-    const visit = (node) => {
+  return (/** @type {any} */ tree) => {
+    const visit = (/** @type {any} */ node) => {
       if (node && node.type === "element" && node.tagName === "a") {
         node.properties = node.properties || {};
         node.properties.target = "_blank";
@@ -26,7 +26,7 @@ function openMarkdownLinksInNewTab() {
 // https://astro.build/config
 export default defineConfig({
   image: {
-    service: { entrypoint: "astro/assets/services/sharp" },
+    service: passthroughImageService(),
   },
 
   markdown: {
