@@ -29,7 +29,7 @@ const { url, frontmatter } = Astro.props;
       >
         {
           frontmatter.tags &&
-            frontmatter.tags.map((tag) => (
+            frontmatter.tags.map((tag: string) => (
               <span class="bg-eggplant/50 rounded-md px-2 py-0.5 text-xs whitespace-nowrap text-white md:px-2 md:py-1 md:text-sm">
                 {tag}
               </span>
@@ -37,7 +37,7 @@ const { url, frontmatter } = Astro.props;
         }
         {
           frontmatter.techStack &&
-            frontmatter.techStack.map((tech) => (
+            frontmatter.techStack.map((tech: string) => (
               <span class="bg-teal/50 rounded-md px-2 py-0.5 text-xs whitespace-nowrap text-white md:px-2 md:py-1 md:text-sm">
                 {tech}
               </span>
@@ -63,12 +63,17 @@ const { url, frontmatter } = Astro.props;
 
 <script is:inline>
   // Auto-scroll tags only when they overflow the container.
-  // Uses requestAnimationFrame for smooth scrolling and clones content to avoid gaps.
+  // Runs once per page and initializes each scroller only once.
   (function () {
-    // Wait for DOM to be ready on iOS
+    if (window.__projectTagScrollerInitDone) return;
+    window.__projectTagScrollerInitDone = true;
+
     function initScrollers() {
       const scrollers = document.querySelectorAll(".tag-scroller");
       scrollers.forEach((scroller) => {
+        if (scroller.dataset.scrollerInited === "true") return;
+        scroller.dataset.scrollerInited = "true";
+
         const track = scroller.querySelector(".tag-track");
         if (!track) return;
 
@@ -78,7 +83,7 @@ const { url, frontmatter } = Astro.props;
           return;
         }
 
-        // Duplicate content to create a seamless loop.
+        // Duplicate content once to create a seamless loop.
         track.innerHTML = track.innerHTML + track.innerHTML;
 
         const speed = parseFloat(scroller.dataset.speed) || 0.6; // pixels per frame
