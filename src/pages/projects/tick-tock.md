@@ -21,4 +21,4 @@ After getting familiar with Astro and Tailwind CSS from working on my personal w
 
 # Easter Eggs
 
-I added a certain sound (*tick, tock...*) that plays when you hover over something on each page. 👀 Also, I just had to make a Laufey reference, because it matches perfectly (I still haven't gotten over the fact that I saw [A Matter of Time](https://open.spotify.com/album/6lauK4mNENDUMSoekDVDNG?si=uNobvqgjQUy7UJwkxqTqxw) live).
+I added a certain sound (_tick, tock..._) that plays when you hover over something on each page. 👀 Also, I just had to make a Laufey reference, because it matches perfectly (I still haven't gotten over the fact that I saw [A Matter of Time](https://open.spotify.com/album/6lauK4mNENDUMSoekDVDNG?si=uNobvqgjQUy7UJwkxqTqxw) live).

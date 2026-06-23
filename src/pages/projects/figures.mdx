@@ -1,0 +1,75 @@
+---
+layout: ../../layouts/ProjectLayout.astro
+title: FigureS
+date: 2026-06-18T00:22:00.000-04:00
+description: Drawing tool for figure skating turn patterns (no, the name doesn't contain a typo).
+tags: ["Figure Skating", "Drawing"]
+techStack: ["React", "TypeScript", "Tailwind CSS", "tldraw"]
+repo: https://github.com/andrei-akopian/UofTExplorer
+demo: https://uoftexplorer.ca
+---
+
+import { Image } from "astro:assets";
+import goldenWaltz from "../../images/projects/figures/golden-waltz.png";
+
+# introduction
+
+As a figure skater and previously a [CanSkate](https://skatecanada.ca/learn-to-skate/canskate/) coach, I had to draw a lot of patterns on the ice for my students to follow. I also spent a lot of time learning ice dance steps from the official Skate Canada patterns.
+
+An ice dance is a choreographed step pattern that we skaters all learn and test. Here's an absolute masterpiece -- the Golden Waltz performed by Tessa & Scott:
+
+<div class="flex justify-center">
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/JHpzI6g2VHc"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+  ></iframe>
+</div>
+
+Part of the Golden Waltz ice dance pattern looks like this:
+
+<Image
+  src={goldenWaltz}
+  alt="Golden Waltz ice dance pattern"
+  class="mx-auto max-w-sm"
+/>
+
+# what I did
+
+I always wondered how Skate Canada made these, so I thought it would be fun to make my own web app for drawing skating steps.
+
+I used React/TypeScript/Tailwind CSS and the [tldraw](https://tldraw.dev/) library, which provides a lot of the existing drawing framework. My main work was extending this to figure skating-specific steps (an example is in the [README](https://github.com/angelayzheng/figures) or on the [homepage](https://figures.angelazheng.ca/)).
+
+Currently, my implementation is using a mix of Bézier curves and elliptical arcs to draw four skating turns: **3 turn**, **bracket**, **rocker**, and **counter**. Since they're currently children of the `Shape` class, they can be resized, rotated, and colour changed, but the individual control points of the component curves aren't movable. I'm planning to have them extend a different class and implement it that way. They also come with a default text label that can be edited.
+
+Exporting drawings into SVG and PNG formats is easy, so this would genuinely be very useful to me as a coach, and for fun when I want to write down cool turn clusters! :D
+
+# what I learned
+
+My main learning with this was honestly manipulating the Bézier curves -- it was a _lot_ of trial and error to get the turns looking vaguely correct. This is a [Bézier curve demo by Josh Comeau](https://www.joshwcomeau.com/svg/interactive-guide-to-paths/) that I used. Also, here's one of my favourite YouTube videos:
+
+<div class="flex justify-center">
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/aVwxzDHniEw"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+  ></iframe>
+</div>
+
+Other than this, I haven't done much OOP in TypeScript or JavaScript before (always Java and Python in the past). It was an interesting experience -- I'll probably have more thoughts once I play around with it more.
+
+# future plans
+
+- Introduce dropdowns to select the actual foot/direction/edge and display the corresponding turn.
+- Currently, turns can be put together consecutively and connected manually, but it's not the same as automatically doing a cluster of turns (which is a sequence of turns done on one foot -- equivalently, without lifting the pen from the page). Implementing this will be a lot of work in making the curves and control points interact properly.
+- Add more turns and skating steps (normal edges, forward/backward stroking, twizzles, C-steps and S-steps, loops, etc.).
