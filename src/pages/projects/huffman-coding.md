@@ -1,5 +1,6 @@
 ---
 layout: ../../layouts/ProjectLayout.astro
+section: Quests
 title: Huffman Coding
 date: 2026-04-30T00:00:00.000-05:00
 description: A journey into compression algorithms.

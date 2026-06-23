@@ -9,9 +9,12 @@ type ProjectPost = {
   url: string;
   frontmatter?: {
     date?: string;
+    section?: string;
     [key: string]: unknown;
   };
 };
+
+const SECTIONS = ["Projects", "Hackathons", "Clubs", "Quests"] as const;
 
 const allPosts = Object.values(
   import.meta.glob<ProjectPost>("./projects/*.{md,mdx}", { eager: true }),
@@ -23,6 +26,10 @@ const posts = allPosts.slice().sort((a, b) => {
   const db = new Date(b.frontmatter?.date || 0).getTime();
   return db - da;
 });
+
+const grouped = Object.fromEntries(
+  SECTIONS.map((s) => [s, posts.filter((p) => p.frontmatter?.section === s)]),
+);
 ---
 
 <Layout title="Projects">
@@ -38,12 +45,25 @@ const posts = allPosts.slice().sort((a, b) => {
   </Banner>
 
   <div
-    class="mx-auto my-4 grid max-w-5xl grid-cols-1 items-stretch justify-items-center gap-6 px-4 py-4 md:px-6 lg:grid-cols-2 lg:px-8"
+    class="mx-auto my-4 flex max-w-5xl flex-col gap-10 px-4 py-4 md:px-6 lg:px-8"
   >
     {
-      posts.map((post) => (
-        <ProjectCard url={post.url} frontmatter={post.frontmatter} />
-      ))
+      SECTIONS.map((section) =>
+        grouped[section].length > 0 ? (
+          <section>
+            {section != "Projects" && (
+              <h2 class="text-eggplant dark:text-lilac mb-6 text-center text-2xl font-semibold md:text-3xl">
+                {section}
+              </h2>
+            )}
+            <div class="grid grid-cols-1 items-stretch justify-items-center gap-6 lg:grid-cols-2">
+              {grouped[section].map((post) => (
+                <ProjectCard url={post.url} frontmatter={post.frontmatter} />
+              ))}
+            </div>
+          </section>
+        ) : null,
+      )
     }
   </div>
 </Layout>

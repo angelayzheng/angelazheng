@@ -1,5 +1,6 @@
 ---
 layout: ../../layouts/ProjectLayout.astro
+section: Projects
 title: Personal Website
 date: 2025-10-27T00:00:00.000-05:00
 description: What you're looking at right now! :D

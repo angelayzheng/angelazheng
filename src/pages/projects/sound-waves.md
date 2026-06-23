@@ -1,5 +1,6 @@
 ---
 layout: ../../layouts/ProjectLayout.astro
+section: Projects
 title: Sound Waves
 date: 2025-06-14T00:00:00.000-05:00
 description: Create wavy, mathy, musical art on your very own canvas!
