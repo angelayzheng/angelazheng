@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/BlogLayout.astro
-title: Toronto Food in Review, Edition 1
+title: Toronto Food in Review, Edition I
 date: 2026-06-14T00:20:00.000-04:00
 description: this is why I chose UofT :p
 tags: ["food", "bubble tea", "matcha", "Toronto"]
