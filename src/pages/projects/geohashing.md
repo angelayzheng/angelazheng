@@ -54,6 +54,8 @@ Then I used Windows Task Scheduler to set up an automation. This took about two 
 
 So now I have a bunch of emails from myself. Of course, the week that I had a bunch of applications due and no time to go anywhere was the week that almost every day was fairly close to me. I will try to make it to at least one day's location this summer...
 
+_[Update on July 13: I made it!](/blog/2026-07-13_geohash-I)_
+
 # other ideas
 
 Last thing: some ideas that I may or may not implement sometime:
