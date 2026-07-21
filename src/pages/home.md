@@ -15,4 +15,4 @@ I'm a first-year student at the University of Toronto studying Computer Science 
 
 # <span class="hidden md:inline">➾ </span>get in touch 💌
 
-Please feel free to connect with me through [email](mailto:angelazheng96@gmail.com) or [LinkedIn](https://www.linkedin.com/in/angelazheng96/)—I'd love to chat!
+Please feel free to connect with me through [email](mailto:angelayang.zheng@gmail.com) or [LinkedIn](https://www.linkedin.com/in/angela-y-zheng/)—I'd love to chat!
