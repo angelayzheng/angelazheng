@@ -3,7 +3,7 @@ layout: ../../layouts/ProjectLayout.astro
 section: Hackathons
 title: Just So You Know
 date: 2025-03-16T00:00:00.000-05:00
-description: A simple Android app that sends you a notification whenever you receive a new notification.
+description: Scrapyard Ottawa | a simple Android app that sends you a notification whenever you receive a new notification
 tags: ["Hackathon", "Hack Club", "Scrapyard Ottawa"]
 techStack: ["Android Studio", "Kotlin"]
 repo: https://github.com/angelayzheng/just-so-you-know

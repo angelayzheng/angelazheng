@@ -3,7 +3,7 @@ layout: ../../layouts/ProjectLayout.astro
 section: Quests
 title: Geohashing
 date: 2026-06-10T00:22:00.000-04:00
-description: Calculating a new location every day.
+description: calculating a new location every day
 tags: ["Algorithms", "Games", "Daily Games", "Geography"]
 techStack: ["Python"]
 repo: https://github.com/angelayzheng/geohashing

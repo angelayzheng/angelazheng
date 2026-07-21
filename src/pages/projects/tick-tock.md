@@ -3,7 +3,7 @@ layout: ../../layouts/ProjectLayout.astro
 section: Projects
 title: Tick, Tock...
 date: 2025-10-30T00:00:00.000-05:00
-description: A simple and pretty stopwatch/timer website.
+description: a simple and pretty stopwatch/timer website
 tags: ["Clock", "Website", "Athena Award"]
 techStack: ["Astro", "JavaScript", "Tailwind CSS"]
 repo: https://github.com/angelayzheng/tick-tock

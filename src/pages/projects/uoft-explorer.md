@@ -3,7 +3,7 @@ layout: ../../layouts/ProjectLayout.astro
 section: Projects
 title: UofT Explorer
 date: 2026-06-16T00:22:00.000-04:00
-description: Graph visualizer and planning tool for courses at the University of Toronto.
+description: graph visualizer and planning tool for courses at the University of Toronto
 tags: ["UofT", "Courses", "Graphs"]
 techStack: ["Python", "Flask", "React", "TypeScript", "Tailwind CSS"]
 repo: https://github.com/andrei-akopian/UofTExplorer
