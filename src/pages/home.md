@@ -5,7 +5,7 @@ description: "Angela Zheng's personal website home page"
 
 # <span class="hidden md:inline">➾ </span>welcome! 💐
 
-I'm a first-year student at the University of Toronto studying Computer Science and Physics, currently working as an Analytic Escalations Intern at Kinaxis. I'm interested in exploring the fields of computer science and physics, particularly AI/ML, astrophysics, and quantum computing. At UofT, I'm currently involved in the [WISE](https://wise.skule.ca/) Conference team and [UTAT Space Systems](https://www.utat.ca/space-systems) Firmware team.
+I'm an incoming second-year student at the University of Toronto studying Computer Science and Physics, currently working as an Analytic Escalations Developer Intern at [Kinaxis](https://www.kinaxis.com/en). I'm interested in exploring the fields of computer science and physics, particularly AI/ML, astrophysics, and quantum computing. At UofT, I'm currently involved in the [WISE](https://wise.skule.ca/) Conference team and [UTAT Space Systems](https://www.utat.ca/space-systems) Firmware team.
 
 # <span class="hidden md:inline">➾ </span>about me 🌟
 
@@ -15,4 +15,4 @@ I'm a first-year student at the University of Toronto studying Computer Science 
 
 # <span class="hidden md:inline">➾ </span>get in touch 💌
 
-Please feel free to connect with me through [email](mailto:angelayang.zheng@gmail.com) or [LinkedIn](https://www.linkedin.com/in/angela-y-zheng/)—I'd love to chat!
+Please feel free to connect with me through [email](mailto:angelayang.zheng@gmail.com) or [LinkedIn](https://www.linkedin.com/in/angela-y-zheng/) -- I'd love to chat!

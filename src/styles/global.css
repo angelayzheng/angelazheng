@@ -13,6 +13,7 @@
   --color-dark: #272527;
   --color-light: #f9f1f8;
 
+  --font-sans: "Inter", "Nunito Sans", sans-serif;
   --font-display: "Inter", "Nunito Sans", sans-serif;
   --font-mono: "Google Sans Code", monospace;
   --font-bellflower: "Bellflower", cursive;

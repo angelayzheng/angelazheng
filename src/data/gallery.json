@@ -1,11 +1,5 @@
 [
   {
-    "filename": "1000004250.jpg",
-    "description": "Photo at night taken in a plane over a city",
-    "location": "Somewhere in a plane",
-    "date": "2019-12-01"
-  },
-  {
     "filename": "1000004626.jpg",
     "description": "Orange and blue sunset with small ponds",
     "location": "Kanata, Ontario, Canada",
@@ -180,6 +174,18 @@
     "date": "2025-06-01"
   },
   {
+    "filename": "IMG_0477.jpg",
+    "description": "Closeup of CN Tower peak during a foggy evening",
+    "location": "CN Tower, Toronto, Ontario, Canada",
+    "date": "2026-04-01"
+  },
+  {
+    "filename": "IMG_0512.jpg",
+    "description": "Toronto city skyline at night",
+    "location": "Harbourfront, Toronto, Ontario, Canada",
+    "date": "2026-04-01"
+  },
+  {
     "filename": "IMG_0557.jpg",
     "description": "Pink sunset above Toronto city skyline",
     "location": "Riverdale Park East, Toronto, Ontario, Canada",
@@ -196,6 +202,18 @@
     "description": "Tokyo city skyline at sunset",
     "location": "Shibuya Sky, Shibuya, Tokyo, Japan",
     "date": "2025-07-01"
+  },
+  {
+    "filename": "IMG_0934.jpg",
+    "description": "Toronto city skyline at night",
+    "location": "Toronto, Ontario, Canada",
+    "date": "2026-04-01"
+  },
+  {
+    "filename": "IMG_1060.jpg",
+    "description": "Cherry blossoms",
+    "location": "University of Toronto, Toronto, Ontario, Canada",
+    "date": "2026-04-01"
   },
   {
     "filename": "IMG_1301.jpg",
@@ -228,10 +246,22 @@
     "date": "2025-07-01"
   },
   {
+    "filename": "IMG_2051.jpg",
+    "description": "Setting sun peeking through trees",
+    "location": "Britannia Beach, Ottawa, Ontario, Canada",
+    "date": "2026-06-01"
+  },
+  {
     "filename": "IMG_2068.jpg",
     "description": "Beijing skyline at sunset",
     "location": "Beijing, China",
     "date": "2025-07-01"
+  },
+  {
+    "filename": "IMG_2120.jpg",
+    "description": "Sunset in a field",
+    "location": "Ottawa, Ontario, Canada",
+    "date": "2026-06-01"
   },
   {
     "filename": "IMG_2143.jpg",
@@ -258,6 +288,12 @@
     "date": "2025-07-01"
   },
   {
+    "filename": "IMG_2356.jpg",
+    "description": "Sunset over water",
+    "location": "Britannia Beach, Ottawa, Ontario, Canada",
+    "date": "2026-06-01"
+  },
+  {
     "filename": "IMG_2413.jpg",
     "description": "Sun shining through clouds on beach",
     "location": "Changle, Fuzhou, Fujian, China",
@@ -268,6 +304,12 @@
     "description": "Landscape of boats on river",
     "location": "Changle, Fuzhou, Fujian, China",
     "date": "2025-07-01"
+  },
+  {
+    "filename": "IMG_2509.jpg",
+    "description": "Four matcha drinks with flowers and photo strips",
+    "location": "Bloom Café, Toronto, Ontario, Canada",
+    "date": "2026-07-01"
   },
   {
     "filename": "IMG_2584.jpg",
@@ -318,12 +360,6 @@
     "date": "2025-08-01"
   },
   {
-    "filename": "IMG_3344.jpg",
-    "description": "Bank buildings at night",
-    "location": "The Bund, Huangpu, Shanghai, China",
-    "date": "2025-08-01"
-  },
-  {
     "filename": "IMG_3433.jpg",
     "description": "View of Waitan at night",
     "location": "The Bund, Huangpu, Shanghai, China",
@@ -333,6 +369,12 @@
     "filename": "IMG_3490.jpg",
     "description": "Daytime view of Zhongshan Road",
     "location": "The Bund, Huangpu, Shanghai, China",
+    "date": "2025-08-01"
+  },
+  {
+    "filename": "IMG_3509.jpg",
+    "description": "Tray of food",
+    "location": "Shanghai Pudong International Airport, Shanghai, China",
     "date": "2025-08-01"
   },
   {
@@ -366,10 +408,28 @@
     "date": "2025-09-01"
   },
   {
-    "filename": "IMG_4588.jpg",
-    "description": "Toronto city skyline at night",
-    "location": "Polson Pier, Toronto, Ontario, Canada",
-    "date": "2025-09-01"
+    "filename": "IMG_6687.jpg",
+    "description": "Wall in the Met",
+    "location": "The Met, New York City, New York, USA",
+    "date": "2025-12-01"
+  },
+  {
+    "filename": "IMG_6969.jpg",
+    "description": "Pink and blue sunset with palm trees",
+    "location": "Kennedy Space Center, Merritt Island, Florida, USA",
+    "date": "2025-12-01"
+  },
+  {
+    "filename": "IMG_7271.jpg",
+    "description": "Ocean with peninsula of buildings",
+    "location": "Nassau, The Bahamas",
+    "date": "2025-12-01"
+  },
+  {
+    "filename": "IMG_7272.jpg",
+    "description": "Ocean with peninsula of buildings",
+    "location": "Nassau, The Bahamas",
+    "date": "2025-12-01"
   },
   {
     "filename": "IMG_8728.jpg",
