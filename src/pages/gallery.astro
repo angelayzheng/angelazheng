@@ -5,11 +5,11 @@ import Layout from "../layouts/Layout.astro";
 import Banner from "../components/Banner.astro";
 
 import GalleryImage from "../components/GalleryImage.astro";
-import galleryData from "../data/gallery.json";
+import galleryData from "../content/gallery.json";
 
 // Import image modules eagerly so they exist at build/preview time
 const imported = import.meta.glob(
-  "../images/gallery/*.{JPG,jpg,jpeg,png,gif,webp}",
+  "../assets/images/gallery/*.{JPG,jpg,jpeg,png,gif,webp}",
   { eager: true },
 );
 
